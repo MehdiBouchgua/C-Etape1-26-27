@@ -168,7 +168,6 @@ void Essai2()
 
 void Essai3()
 {
-  #if 0
   cout << endl << "(1) ***** Test constructeur par defaut + display *******************************" << endl;
   {
     Event event;
@@ -221,7 +220,6 @@ void Essai3()
     cout << endl << endl;
 
   }
-  #endif
 }
 
 /*******************************************************************************************************/
