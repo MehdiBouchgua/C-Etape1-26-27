@@ -227,7 +227,6 @@ void Essai3()
 /*******************************************************************************************************/
 void Essai4()
 {
-  #if 0
   cout << endl << "(1) ***** Tests de base des jours de la semaine ********************************" << endl;
   cout << "Premier jour de la semaine : " << Timing::MONDAY << endl;
   // ne pas oublier les autres jours de la semaine...
@@ -270,6 +269,6 @@ void Essai4()
   cout << "e1.currentCode = " << e1.currentCode << endl;
   cout << "e2.currentCode = " << e2.currentCode << endl;
   cout << "e3.currentCode = " << e3.currentCode << endl << endl;
-  #endif
+  
 }
 

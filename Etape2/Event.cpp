@@ -6,6 +6,8 @@ using namespace std;
 
 namespace planning{
 
+  int Event::currentCode = 1;
+
     //Constructeur par defaut
   Event::Event()
   {

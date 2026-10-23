@@ -20,6 +20,17 @@ namespace planning
       Timing(const Timing& t);
       ~Timing();
 
+      static const std::string MONDAY;
+	  static const std::string TUESDAY;
+	  static const std::string WEDNESDAY;
+	  static const std::string THURSDAY;
+	  static const std::string FRIDAY;
+	  static const std::string SATURDAY;
+	  static const std::string SUNDAY;
+
+
+
+
       void setDay(const std::string& d);
       void setStart(const Time& s);
       void setDuration(const Time& dur);

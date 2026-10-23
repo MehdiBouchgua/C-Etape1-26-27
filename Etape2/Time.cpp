@@ -6,6 +6,7 @@ using namespace std;
 
 namespace planning{
 
+
 	//Constructeur par défaut
 	Time::Time()
 	{

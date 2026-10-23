@@ -16,6 +16,7 @@ namespace planning{
 		Time(const Time& t);
 		~Time();
 
+
 		void setHour(int h);
 		void setMinute(int m);
 

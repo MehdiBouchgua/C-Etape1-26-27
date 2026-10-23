@@ -16,6 +16,8 @@ namespace planning{
       Event(const Event &e);                     // copie (deep copy !)
       ~Event();                                  // libère title
 
+      static int currentCode;
+
       void setCode(int c);
       void setTitle(const char* t);
       void setTiming(const Timing& t);

@@ -5,11 +5,22 @@
 using namespace std;
 
 namespace planning{
+
+
+	const string Timing::MONDAY    = "Lundi";
+	const string Timing::TUESDAY   = "Mardi";
+	const string Timing::WEDNESDAY = "Mercredi";
+	const string Timing::THURSDAY  = "Jeudi";
+	const string Timing::FRIDAY    = "Vendredi";
+	const string Timing::SATURDAY  = "Samedi";
+	const string Timing::SUNDAY    = "Dimanche";
+
+	
 	//Constructeur par defaut
 	Timing::Timing()
 	{
 		cout << ">>> Timing : constructeur par défaut <<<" << endl;
-		setDay("Lundi");
+		setDay(MONDAY);
 	}
 
 
