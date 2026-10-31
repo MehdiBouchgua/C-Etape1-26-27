@@ -1,0 +1,46 @@
+#ifndef TIMING_H
+#define TIMING_H
+
+#include <string>
+#include "Time.h"
+
+namespace planning
+{
+  class Timing
+  {
+    private:
+      std::string day;      
+      Time start;           
+      Time duration;        
+
+    public:
+
+      Timing();
+      Timing(const std::string& d, const Time& s, const Time& dur);
+      Timing(const Timing& t);
+      ~Timing();
+
+      static const std::string MONDAY;
+	  static const std::string TUESDAY;
+	  static const std::string WEDNESDAY;
+	  static const std::string THURSDAY;
+	  static const std::string FRIDAY;
+	  static const std::string SATURDAY;
+	  static const std::string SUNDAY;
+
+
+
+
+      void setDay(const std::string& d);
+      void setStart(const Time& s);
+      void setDuration(const Time& dur);
+
+      std::string getDay() const;
+      const Time& getStart() const;
+      const Time& getDuration() const;
+
+      void display() const;
+  };
+}
+
+#endif
