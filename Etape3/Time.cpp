@@ -134,4 +134,71 @@ namespace planning{
 	    return Time(m - t.toMinutes());
 	}
 
+	//OPERATOR < > ==
+	bool Time::operator<(const Time& t) const
+	{
+	    return toMinutes() < t.toMinutes();
+	}
+
+	bool Time::operator>(const Time& t) const
+	{
+	    return toMinutes() > t.toMinutes();
+	}
+
+	bool Time::operator==(const Time& t) const
+	{
+	    return toMinutes() == t.toMinutes();
+	}
+
+	//OPERATOR >> <<
+	ostream& operator<<(ostream& os, const Time& t)
+	{
+	    if (t.hour < 10) os << '0';
+	    os << t.hour << 'h';  //Attention : on écrite dans le flux ici
+	    if (t.minute < 10) os << '0';
+	    os << t.minute;
+	    return os;
+	}
+
+	istream& operator>>(istream& is, Time& t)
+	{
+	    int h, m;
+	    char sep;               // récup le 'h' de « 14h20 »
+	    is >> h >> sep >> m;
+	    t.setHour(h);
+	    t.setMinute(m);
+	    return is;
+	}
+
+	//OPERATOR ++ --
+	// ++h
+	Time& Time::operator++()
+	{
+	    *this = *this + 30;   // réutilise + et =
+	    return *this;
+	}
+
+	// h++
+	Time Time::operator++(int)
+	{
+	    Time old(*this);      // sauvegarde l'ancienne valeur
+	    ++(*this);            // réutilise le pré-incrément
+	    return old;
+	}
+
+	// --h
+	Time& Time::operator--()
+	{
+	    *this = *this - 30;   // réutilise ton + et ton =
+	    return *this;
+	}
+
+	// h--
+	Time Time::operator--(int)
+	{
+	    Time old(*this);      // sauvegarde l'ancienne valeur
+	    --(*this);            // réutilise le pré-incrément
+	    return old;
+	}
+
 }

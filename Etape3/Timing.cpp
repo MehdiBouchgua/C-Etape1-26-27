@@ -94,4 +94,37 @@ namespace planning{
 	    cout << ")";
 	}
 
+	int Timing::dayNumber() const
+	{
+	    if (day == MONDAY)    return 1;
+	    if (day == TUESDAY)   return 2;
+	    if (day == TUESDAY)   return 2;
+	    if (day == WEDNESDAY)   return 3;
+	    if (day == THURSDAY)   return 4;
+	    if (day == FRIDAY)   return 5;
+	    if (day == SATURDAY)   return 6;
+	    if (day == SUNDAY)   return 7;
+	    
+	    return 0;
+	}
+
+	bool Timing::operator<(const Timing& t) const
+	{
+	    if (dayNumber() != t.dayNumber())               
+	        return dayNumber() < t.dayNumber();
+	    if (!(start == t.start))                          
+	        return start < t.start;
+	    return duration < t.duration;                     
+	}
+
+	bool Timing::operator==(const Timing& t) const
+	{
+	    return day == t.day && start == t.start && duration == t.duration;
+	}
+
+	bool Timing::operator>(const Timing& t) const
+	{
+	    return t < *this;     // a > b  ⟺  b < a
+	}
+
 }

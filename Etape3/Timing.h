@@ -11,7 +11,8 @@ namespace planning
     private:
       std::string day;      
       Time start;           
-      Time duration;        
+      Time duration;  
+      int dayNumber() const; //calcul jour + jour   
 
     public:
 
@@ -21,12 +22,17 @@ namespace planning
       ~Timing();
 
       static const std::string MONDAY;
-	  static const std::string TUESDAY;
-	  static const std::string WEDNESDAY;
-	  static const std::string THURSDAY;
-	  static const std::string FRIDAY;
-	  static const std::string SATURDAY;
-	  static const std::string SUNDAY;
+  	  static const std::string TUESDAY;
+  	  static const std::string WEDNESDAY;
+  	  static const std::string THURSDAY;
+  	  static const std::string FRIDAY;
+  	  static const std::string SATURDAY;
+  	  static const std::string SUNDAY;
+
+
+      bool operator<(const Timing& t) const;
+      bool operator>(const Timing& t) const;
+      bool operator==(const Timing& t) const;
 
 
 

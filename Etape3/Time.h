@@ -1,6 +1,6 @@
 #ifndef TIME_H
 #define TIME_H
-
+#include <iostream>
 
 namespace planning{
 	class Time
@@ -31,9 +31,21 @@ namespace planning{
 		Time operator+(const Time& t) const;
 		friend Time operator+(int m, const Time& t);
 
-		Time operator-(const Time& t);
+		Time operator-(const Time& t) const;
 		Time operator-(int m) const;
-		friend Time operator-(int m, const Time& t);
+		friend Time operator-(int m, const Time& t) ;
+
+		bool operator<(const Time& t) const;
+		bool operator>(const Time& t) const;
+		bool operator==(const Time& t) const;
+
+		friend std::ostream& operator<<(std::ostream& os, const Time& t);
+		friend std::istream& operator>>(std::istream& is, Time& t);
+
+		Time& operator++();      // ++h
+		Time  operator++(int);   // h++
+		Time& operator--();      // --h
+		Time  operator--(int);   // h--
 
 
 
